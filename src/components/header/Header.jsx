@@ -2,7 +2,10 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { VscClose } from 'react-icons/vsc';
+import { VscClose, VscMenu } from 'react-icons/vsc';
+import Button from './Button';
+import logo from '../../assets/logo.svg';
+import InviteButton from '../InviteButton';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -10,16 +13,17 @@ const Header = () => {
   return (
     <>
       <HeaderContainer isOpen={open}>
+        <img src={logo} alt="" />
         <ButtonList>
-          <div>Home</div>
-          <div>About</div>
-          <div>Contact</div>
-          <div>Blog</div>
-          <div>Carrer</div>
+          <Button text="Home" />
+          <Button text="About" />
+          <Button text="Contact" />
+          <Button text="Blog" />
+          <Button text="Carrer" />
         </ButtonList>
-
-        <Icon onClick={() => setOpen(!open)}>
-          <VscClose />
+        <InviteButton text="Request Invite" />
+        <Icon open={open} onClick={() => setOpen(!open)}>
+          {open ? <VscClose size={35} /> : <VscMenu size={35} />}
         </Icon>
       </HeaderContainer>
       <Modal isOpen={open}>
@@ -39,21 +43,37 @@ export default Header;
 
 const HeaderContainer = styled.div`
   height: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  img {
+    margin: auto auto auto 4vw;
+  }
+  button {
+    margin: auto 3vw auto 3vw;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
 `;
 
 const Icon = styled.div`
-  font-size: 40px;
+  border-radius: 10px;
+  margin: auto 5vw auto 0;
   display: none;
-  float: right;
   @media screen and (max-width: 600px) {
     display: block;
   }
 `;
 
 const ButtonList = styled.div`
+  margin: auto;
+  width: 450px;
+  justify-content: space-around;
   display: flex;
   flex-direction: row;
   text-align: center;
+  height: 80px;
   @media screen and (max-width: 600px) {
     display: none;
   }
@@ -69,15 +89,23 @@ const fadein = keyframes`
 `;
 
 const Modal = styled.div`
-  display: ${(props) => (props.isOpen ? 'block' : 'none')};
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  left: 0;
-  right: 0;
-  animation: ${fadein} 0.25s linear;
+  display: none;
+  @media screen and (max-width: 600px) {
+    display: ${(props) => (props.isOpen ? 'block' : 'none')};
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(78, 77, 78, 0.7) 0%,
+      rgba(117, 117, 120, 0.48) 35%,
+      rgba(255, 255, 255, 0) 75%
+    );
+    left: 0;
+    right: 0;
+    animation: ${fadein} 0.25s linear;
+  }
 `;
 
 const ModalContent = styled.ul`
@@ -89,7 +117,7 @@ const ModalContent = styled.ul`
   border-radius: 10px;
   li {
     list-style-type: none;
-    color: red;
+    color: ${(props) => props.theme.colors.primary};
     height: 50px;
     line-height: 50px;
     vertical-align: middle;

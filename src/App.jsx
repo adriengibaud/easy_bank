@@ -1,14 +1,19 @@
 import React from 'react';
-import BodyTest from './components/BodyTest';
+
+import { ThemeProvider } from 'styled-components';
+import theme from './utilities/styles/theme.style';
 import Header from './components/header/Header';
 import GlobalStyle from './utilities/styles/global.style';
+import Body from './components/body/Body';
 
 function App() {
   return (
     <>
-      <Header />
-      <BodyTest />
-      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <Header theme={theme} />
+        <Body />
+        <GlobalStyle />
+      </ThemeProvider>
     </>
   );
 }
