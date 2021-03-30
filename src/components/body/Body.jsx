@@ -1,32 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+import Articles from './articles/Articles';
+import Features from './features/Features';
+import TopPart from './TopPart';
 
 const Body = () => (
-  <BodyContainer>
-    <LeftContainer>
-      <Title>Next generation digital banking</Title>
-    </LeftContainer>
-    <RightContainer>yo</RightContainer>
-  </BodyContainer>
+  <div>
+    <TopPart />
+    <Features />
+    <Articles />
+  </div>
 );
 
 export default Body;
-
-const BodyContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-const LeftContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-const Title = styled.div`
-  font-size: 30px;
-`;
-
-const RightContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-`;

@@ -17,4 +17,5 @@ const Button = styled.button`
   background: ${(props) => props.theme.colors.gradient};
   color: white;
   border: none;
+  font-size: 1em;
 `;

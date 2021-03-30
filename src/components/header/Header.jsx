@@ -46,8 +46,11 @@ const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  position: relative;
+  background: white;
+  z-index: 100;
   img {
-    margin: auto auto auto 4vw;
+    margin: auto 4vw auto 4vw;
   }
   button {
     margin: auto 3vw auto 3vw;
