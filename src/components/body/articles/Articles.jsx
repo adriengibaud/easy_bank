@@ -52,13 +52,14 @@ const ArticlesContainer = styled.div`
     font-weight: normal;
     color: ${(props) => props.theme.colors.primary};
     font-size: 40px;
+    margin: 3vh 0;
   }
 `;
 
 const CardContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
 `;

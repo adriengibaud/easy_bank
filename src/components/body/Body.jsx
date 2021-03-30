@@ -4,7 +4,7 @@ import Features from './features/Features';
 import TopPart from './TopPart';
 
 const Body = () => (
-  <div>
+  <div style={{ overflow: 'hidden' }}>
     <TopPart />
     <Features />
     <Articles />

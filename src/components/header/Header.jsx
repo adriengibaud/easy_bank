@@ -49,23 +49,24 @@ const HeaderContainer = styled.div`
   position: relative;
   background: white;
   z-index: 100;
+  justify-content: space-between;
   img {
     margin: auto 4vw auto 4vw;
   }
   button {
     margin: auto 3vw auto 3vw;
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 640px) {
       display: none;
     }
   }
 `;
 
 const Icon = styled.div`
-  border-radius: 10px;
-  margin: auto 5vw auto 0;
   display: none;
-  @media screen and (max-width: 600px) {
-    display: block;
+  @media screen and (max-width: 640px) {
+    display: flex;
+    align-items: center;
+    margin-right: 5vw;
   }
 `;
 
@@ -77,7 +78,7 @@ const ButtonList = styled.div`
   flex-direction: row;
   text-align: center;
   height: 80px;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 640px) {
     display: none;
   }
 `;
@@ -93,10 +94,10 @@ const fadein = keyframes`
 
 const Modal = styled.div`
   display: none;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 640px) {
     display: ${(props) => (props.isOpen ? 'block' : 'none')};
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     width: 100%;
     height: 100%;
     background: linear-gradient(

@@ -45,6 +45,7 @@ export default Features;
 const Container = styled.div`
   background: ${(props) => props.theme.colors.LightGrayishBlue};
   min-height: 800px;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   padding: 7vh 7vw 7vh 7vw;
@@ -57,7 +58,7 @@ const Header = styled.div`
   max-width: 800px;
   max-height: 200px;
   min-height: 150px;
-  justify-content: space-evenly;
+  justify-content: space-around;
 
   h1 {
     font-weight: normal;

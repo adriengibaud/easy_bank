@@ -76,14 +76,12 @@ const RightContainer = styled.div`
   background-position: 16% 65%;
   background-repeat: no-repeat;
   background-size: 150%;
-  max-width: 50vw;
+  width: 50vw;
   height: 60vh;
   img {
-    width: 50vw;
-    position: absolute;
-    transform: translateX(10%) translateY(-20%);
-    @media screen and (max-width: 900px) {
-      transform: translateX(10%) translateY(0%);
-    }
+    min-height: 100vh;
+    position: relative;
+    top: -220px;
+    right: -15%;
   }
 `;
