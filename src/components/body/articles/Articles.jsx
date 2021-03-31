@@ -51,11 +51,15 @@ const ArticlesContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   min-height: 800px;
+
   h1 {
     font-weight: normal;
     color: ${(props) => props.theme.colors.primary};
     font-size: 40px;
     margin: 3vh 0;
+    @media screen and (max-width: 640px) {
+      text-align: center;
+    }
   }
 `;
 

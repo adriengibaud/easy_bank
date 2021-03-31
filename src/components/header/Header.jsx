@@ -127,6 +127,7 @@ const ModalContent = styled.ul`
     vertical-align: middle;
   }
   li:hover {
-    background-color: red;
+    background-color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.VeryLightGrey};
   }
 `;

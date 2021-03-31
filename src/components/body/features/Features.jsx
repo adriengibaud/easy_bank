@@ -50,6 +50,9 @@ const Container = styled.div`
   flex-direction: column;
   padding: 7vh 7vw 7vh 7vw;
   justify-content: space-around;
+  @media screen and (max-width: 640px) {
+    text-align: center;
+  }
 `;
 
 const Header = styled.div`

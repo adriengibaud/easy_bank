@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import InviteButton from '../InviteButton';
 import bgImageDesktop from '../../assets/bg-intro-desktop.svg';
+import bgImageMobile from '../../assets/bg-intro-mobile.svg';
 import mockups from '../../assets/image-mockups.png';
 
 const TopPart = () => (
@@ -17,7 +18,7 @@ const TopPart = () => (
           <InviteButton text="Request Invite" />
         </InfoBlock>
       </LeftContainer>
-      <RightContainer bgDesktop={bgImageDesktop}>
+      <RightContainer bgDesktop={bgImageDesktop} bgMobile={bgImageMobile}>
         <img src={mockups} alt="" />
       </RightContainer>
     </TopContainer>
@@ -38,12 +39,20 @@ const TopContainer = styled.div`
   height: 60vh;
   display: flex;
   flex-direction: row;
+  padding-bottom: 3vh;
   background: ${(props) => props.theme.colors.VeryLightGrey};
+  @media screen and (max-width: 640px) {
+    flex-direction: column-reverse;
+    height: 100vh;
+  }
 `;
 
 const LeftContainer = styled.div`
   width: 50vw;
   height: 60vh;
+  @media screen and (max-width: 640px) {
+    width: 100vw;
+  }
 `;
 
 const InfoBlock = styled.div`
@@ -55,6 +64,11 @@ const InfoBlock = styled.div`
   top: 50%;
   margin-left: 7vw;
   transform: translateY(-50%);
+  @media screen and (max-width: 640px) {
+    text-align: center;
+    align-items: center;
+    margin: auto;
+  }
 `;
 
 const Title = styled.div`
@@ -78,10 +92,24 @@ const RightContainer = styled.div`
   background-size: 150%;
   width: 50vw;
   height: 60vh;
+  @media screen and (max-width: 640px) {
+    background-image: url(${(props) => props.bgMobile});
+    background-position: 0% 65%;
+    background-size: 100%;
+    width: 100vw;
+    height: 40vh;
+  }
   img {
     min-height: 100vh;
     position: relative;
     top: -220px;
     right: -15%;
+    @media screen and (max-width: 640px) {
+      min-height: 50vh;
+      top: -100px;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 `;
