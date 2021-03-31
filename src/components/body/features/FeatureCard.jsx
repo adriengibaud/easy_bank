@@ -25,6 +25,9 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (max-width: 640px) {
+    align-items: center;
+  }
   img {
     width: 90px;
   }
@@ -35,5 +38,8 @@ const CardContainer = styled.div`
   }
   p {
     color: ${(props) => props.theme.colors.GrayishBlue};
+    @media screen and (max-width: 640px) {
+      text-align: center;
+    }
   }
 `;

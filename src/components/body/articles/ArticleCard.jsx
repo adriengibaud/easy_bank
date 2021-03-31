@@ -23,6 +23,8 @@ ArticleCard.propTypes = {
 export default ArticleCard;
 
 const CardContainer = styled.div`
+  margin-bottom: 3vh;
+  cursor: pointer;
   background: white;
   width: 315px;
   min-width: 315px;

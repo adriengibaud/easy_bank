@@ -11,6 +11,7 @@ InviteButton.propTypes = {
 export default InviteButton;
 
 const Button = styled.button`
+  cursor: pointer;
   border-radius: 50px;
   width: 200px;
   height: 55px;

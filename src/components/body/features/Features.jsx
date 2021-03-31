@@ -59,6 +59,7 @@ const Header = styled.div`
   max-height: 200px;
   min-height: 150px;
   justify-content: space-around;
+  gap: 30px;
 
   h1 {
     font-weight: normal;
@@ -72,6 +73,7 @@ const Header = styled.div`
 `;
 
 const FeaturesContainer = styled.div`
+  margin-top: 3vh;
   display: flex;
   width: 86vw;
   flex-direction: row;

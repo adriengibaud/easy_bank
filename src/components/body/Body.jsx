@@ -1,6 +1,7 @@
 import React from 'react';
 import Articles from './articles/Articles';
 import Features from './features/Features';
+import Footer from './footer/Footer';
 import TopPart from './TopPart';
 
 const Body = () => (
@@ -8,6 +9,7 @@ const Body = () => (
     <TopPart />
     <Features />
     <Articles />
+    <Footer />
   </div>
 );
 
