@@ -129,5 +129,11 @@ const ModalContent = styled.ul`
   li:hover {
     background-color: ${(props) => props.theme.colors.primary};
     color: ${(props) => props.theme.colors.VeryLightGrey};
+    :first-child {
+      border-radius: 10px 10px 0 0;
+    }
+    :last-child {
+      border-radius: 0 0 10px 10px;
+    }
   }
 `;
