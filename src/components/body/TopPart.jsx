@@ -6,33 +6,24 @@ import bgImageMobile from '../../assets/bg-intro-mobile.svg';
 import mockups from '../../assets/image-mockups.png';
 
 const TopPart = () => (
-  <BodyContainer>
-    <TopContainer>
-      <LeftContainer>
-        <InfoBlock>
-          <Title>Next generation digital banking</Title>
-          <Subtitle>
-            Take your financial life online. You easybank account wil be a one-stop-shop or
-            spending, saving, budgeting, investing and much more.
-          </Subtitle>
-          <InviteButton text="Request Invite" />
-        </InfoBlock>
-      </LeftContainer>
-      <RightContainer bgDesktop={bgImageDesktop} bgMobile={bgImageMobile}>
-        <img src={mockups} alt="" />
-      </RightContainer>
-    </TopContainer>
-  </BodyContainer>
+  <TopContainer>
+    <LeftContainer>
+      <InfoBlock>
+        <Title>Next generation digital banking</Title>
+        <Subtitle>
+          Take your financial life online. You easybank account wil be a one-stop-shop or spending,
+          saving, budgeting, investing and much more.
+        </Subtitle>
+        <InviteButton text="Request Invite" />
+      </InfoBlock>
+    </LeftContainer>
+    <RightContainer bgDesktop={bgImageDesktop} bgMobile={bgImageMobile}>
+      <img src={mockups} alt="" />
+    </RightContainer>
+  </TopContainer>
 );
 
 export default TopPart;
-
-const BodyContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  z-index: 3;
-`;
 
 const TopContainer = styled.div`
   width: 100vw;
@@ -43,7 +34,7 @@ const TopContainer = styled.div`
   background: ${(props) => props.theme.colors.VeryLightGrey};
   @media screen and (max-width: 640px) {
     flex-direction: column-reverse;
-    height: 100vh;
+    height: auto;
   }
 `;
 
@@ -52,6 +43,8 @@ const LeftContainer = styled.div`
   height: 60vh;
   @media screen and (max-width: 640px) {
     width: 100vw;
+    padding-top: 100px;
+    height: auto;
   }
 `;
 
@@ -65,6 +58,7 @@ const InfoBlock = styled.div`
   margin-left: 7vw;
   transform: translateY(-50%);
   @media screen and (max-width: 640px) {
+    transform: translateY(0%);
     text-align: center;
     align-items: center;
     margin: auto;
@@ -94,22 +88,22 @@ const RightContainer = styled.div`
   height: 60vh;
   @media screen and (max-width: 640px) {
     background-image: url(${(props) => props.bgMobile});
-    background-position: 0% 65%;
+    background-position: 0% 50%;
     background-size: 100%;
     width: 100vw;
     height: 40vh;
   }
   img {
-    min-height: 100vh;
+    height: 100vh;
     position: relative;
     top: -220px;
     right: -15%;
     @media screen and (max-width: 640px) {
-      min-height: 50vh;
-      top: -100px;
-      right: 0;
+      position: static;
+      height: 450px;
       margin-left: auto;
       margin-right: auto;
+      margin-top: -20%;
     }
   }
 `;

@@ -23,5 +23,8 @@ const CreditContainer = styled.div`
   }
   p {
     color: ${(props) => props.theme.colors.LightGrayishBlue};
+    @media screen and (max-width: 640px) {
+      text-align: center;
+    }
   }
 `;

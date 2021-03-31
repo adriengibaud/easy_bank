@@ -68,6 +68,7 @@ const Header = styled.div`
     font-weight: normal;
     font-size: 45px;
     color: ${(props) => props.theme.colors.primary};
+    padding-bottom: 30px;
   }
   p {
     color: ${(props) => props.theme.colors.GrayishBlue};
